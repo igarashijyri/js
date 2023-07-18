@@ -29,3 +29,12 @@ console.log( result ); // undefined
 
 // 数値を渡した場合
 printSum( 10, 20 );
+
+
+// 関数式
+const minus = function ( val1, val2 ) {
+    return val1 - val2;
+}
+
+let m_result = minus( 10, 5 );
+console.log( m_result )
