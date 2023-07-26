@@ -1,0 +1,396 @@
+@charset "UTF-8";
+@import url("reset.css");
+
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 15px;
+}
+
+body {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    color: #fff;
+    background-color: #444;
+}
+
+p {
+    line-height: 2.0;
+}
+
+h2, h3 {
+    font-weight: normal;
+}
+
+table {
+    margin: auto;
+    font-size: 18px;
+    white-space: nowrap;
+    border-collapse: separate;
+    border-spacing: 60px 15px;
+    overflow-x: scroll;
+}
+
+td {
+    margin-bottom: 20px;
+}
+
+a {
+    color: unset;
+    text-decoration: unset;
+}
+a:hover {
+    opacity: 0.6; /* 透明度の指定 */
+}
+
+ul, li {
+    list-style-type: none;
+}
+
+img {
+    width: 100%;
+    max-width: 100%;
+}
+
+
+#container {
+    width: 100%;
+    text-align: center;
+}
+
+#side {
+    height: 50%;
+    width: 50%;
+    background: url("../images/pc/side_img.png") no-repeat;
+
+    position: fixed;
+    z-index: 999;
+}
+
+/* header */
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: rgba(0, 0, 0, 0.75);
+
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+}
+
+#title img {
+    width: auto;
+    height: 20px;   
+}
+
+.menu-list {
+    display: flex;
+    font-size: 28px;
+    font-family: 'Caveat', cursive;
+}
+.menu-list-item {
+    margin-left: 100px;
+}
+
+
+/* footer */
+#footer {
+    padding: 15px 0;
+    background-color: #000;
+}
+#copyright {
+    font-size: 12px;
+    color: #999;
+}
+
+
+/* content */
+
+.section {
+    padding: 80px 15% 100px;
+}
+.bg-skill {
+    background: url("../images/skill-bg.jpg") no-repeat center;
+    background-size: 100% 100%;
+}
+
+.section-head {
+    margin-bottom: 50px;
+}
+.section-ttl {
+    margin-bottom: 20px;
+}
+.section-ttl::after {
+    display: block;
+    content: "";
+    width: 1em;
+    height: 2px;
+    margin: 20px auto 0;
+    background: #444;
+}
+.ttl {
+    display: block;
+    padding-bottom: 5px;
+    font-size: 40px;
+    font-weight: 700;
+    color: #C5DBFB;
+    font-family: 'Caveat', cursive;
+}
+
+/* mv */
+#mv {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background: url("../images/mv_bg.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.top {
+    font-family: 'Caveat', cursive;
+}
+
+#mv h2 {
+    font-size: 50px;
+}
+
+.copy {
+    display: none;
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    font-size: 36px;
+    line-height: 1.72;
+}
+
+.copy_img {
+    display: none;
+    position: absolute;
+
+    bottom: 42%;
+    left: 51%;
+    width: 30vw;
+    height: 30vh;
+    background: url("../images/pc/mv_fether.png") no-repeat center;
+    transform: rotateX( 25deg );
+}
+
+/* profile */
+.profile-img {
+    float: left;
+    width: 25%;
+    margin-right: 4%;
+}
+.profile-body-img {
+    border-radius: 20%;
+}
+
+.clearfix:after {
+    content: "";
+    display: block;
+    clear: both; /* floatの解除 */
+}
+
+.profile-txt {
+    text-align: left;
+}
+
+.profile-name {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.snt-list {
+    font-size: 14px;
+}
+
+.sns-list-item {
+    display: inline-block;
+    margin: 1em 05em 0; /* 親要素のfont-size(px)に対する割合 */
+}
+.sns-list-item:first-of-type {
+    margin-left: 0;
+}
+
+/* career */
+#career {
+    background-color: #292929;
+}
+
+
+.detail {
+    text-align: left;
+}
+.detail a {
+    color: rgb(33, 106, 140);
+    text-decoration: underline;
+}
+
+/* skill */
+.box-outer {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#skill .box-outer {
+    width: 56%;
+    margin: 0 auto;
+}
+
+#skill .box {
+    width: 80px;
+}
+
+.skill-name {
+    margin-top: 10px;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+/* work */
+#work .box {
+    margin-bottom: 4vw;
+    width: 48%;
+    text-align: left;
+}
+
+.work-ttl {
+    margin-top: 20px;
+    padding-bottom: 5px;
+    padding-left: 0.5m;
+    font-size: 20px;
+    line-height: 2.0;
+    font-weight: 500;
+}
+
+.work-desc {
+    font-size: 14px;
+}
+
+span.note {
+    color: red;
+}
+
+.pc-only { display: block; }
+.sp-only { display: none; }
+
+/* Media Query */
+@media screen and (max-width: 767px) {
+    .pc-only { display: none; }
+    .sp-only { display: block; }
+
+    body {
+        font-size: 14px;
+    }
+
+    /* header */
+    #header {
+        padding: 20px 6%;
+    }
+
+    /* menu-list-item--contactがついていないmenu-list-itemにstyleを適用 */
+    .menu-list-item:not(.menu-list-item--contact) {
+        display: none;
+    }
+
+    /* content */
+    .section { 
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+
+    .section-head {
+        margin-bottom: 40px;
+    }
+    .section-ttl .ttl {
+        font-size: 32px;
+    }
+
+    #content {
+        padding-top: 0;
+    }
+
+    #side {
+        background: url("../images/sp/side_img.png") no-repeat;
+    }
+
+    /* mv */
+    #mv {
+        height: 100vh;
+    }
+
+    .copy {
+        font-size: 26px;
+        line-height: 1.85;
+    }
+
+    .copy_img {
+        top: 37%;
+        left: 58%;
+        background-image: url("../images/sp/mv_fether.png");
+    }
+
+    /* #profile */
+    .profile-img {
+        clear: left;
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+
+    .profile-name {
+        margin-bottom: 10px;
+    }
+
+
+    .career-tbl {
+        overflow-x: scroll;
+    }
+
+    /* #skill */
+    /* 1列以上にしても良いという命令 */
+    #skill .box-outer {
+        width: 90%;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: -21px;
+    }
+
+    #skill .box {
+        margin-bottom: 21px;
+    }
+
+    /* n-1としたとき */
+    /* 3n-2 = 3*1-2　=1 となるので、1番目と3番目がnot指定される*/
+    #skill .box:not(:nth-of-type(3n-2)) {
+        margin-left: calc((100% - 80px * 3) / 2)
+    }
+
+    .skill-name {
+        margin-top: 13px;
+    }
+
+    /* work */
+    #work .box-outer {
+        display: block;
+    }
+
+    #work .box {
+        width: 100%;
+    }
+
+    /* first-of-typeで指定してしまうと今後boxが増えたときに面倒 */
+    #work .box:not(:last-of-type) {
+        margin-bottom: 40px;
+    }
+}
